@@ -107,6 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                         <th scope="col">Mobile</th>
                         <th scope="col">Gender</th>
                         <th scope="col">Station</th>
+                        <th scope="col">Discount</th>
                         <th scope="col">Fare</th>
                     </tr>
                 </thead>
@@ -134,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                     foreach ($columns as $column) {
                         $seats = explode(",", $column); // split the seat string into an array
                         foreach ($seats as $seat) {
-                            $ticketQuery = "SELECT ticket_id, name, mobile, gender, station, seat, fare, seller_name, seller_counter FROM sell_ticket_history WHERE coach_id = ? AND seat LIKE ?";
+                            $ticketQuery = "SELECT ticket_id, name, mobile, gender, station, seat, fare,discount, discount_fare_per_seat, seller_name, seller_counter FROM sell_ticket_history WHERE coach_id = ? AND seat LIKE ?";
                             $ticketStmt = $con->prepare($ticketQuery);
                             $seatParam = '%' . $seat . '%'; // create variable to hold third argument
                             $ticketStmt->bind_param("is", $coach_id, $seatParam); // pass variable by reference
@@ -153,7 +154,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                                     echo "<td class='font-weight-normal'>" . $ticketRow['mobile'] . "</td>";
                                     echo "<td class='font-weight-normal'>" . $ticketRow['gender'] . "</td>";
                                     echo "<td class='font-weight-normal'>" . $ticketRow['station'] . "</td>";
-                                    echo "<td class='font-weight-normal'>" . $ticketRow['fare'] . "</td>";
+                                    echo "<td class='font-weight-normal'>" . $ticketRow['discount'] . "</td>";
+                                    echo "<td class='font-weight-normal'>" . $ticketRow['discount_fare_per_seat'] . "</td>";
                                     echo "</tr>";
                                 }
                             }
@@ -228,7 +230,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         var table = document.getElementById("table"), sumVal = 0;
 
         for (var i = 1; i < table.rows.length; i++) {
-            sumVal = sumVal + parseInt(table.rows[i].cells[7].innerHTML);
+            sumVal = sumVal + parseInt(table.rows[i].cells[8].innerHTML);
         }
         document.getElementById("value").innerText = sumVal + ' TK';
 

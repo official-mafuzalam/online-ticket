@@ -21,10 +21,11 @@ $user_id = $_SESSION['user_id'];
     <title>Sell Report</title>
 
     <style>
-        body{
+        body {
             margin: 10px;
             padding: 5px;
         }
+
         .input-form {
             margin-top: 40px;
             display: flex;

@@ -6,22 +6,20 @@ require_once '../inc/conn.php';
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     // get the ID of the selected row from the URL
-    if (isset( $_GET['id'] ) && !empty( $_GET['id'] )) {
-        $ticket_id = mysqli_real_escape_string( $con, $_GET['id'] );
+    if (isset($_GET['id']) && !empty($_GET['id'])) {
+        $ticket_id = mysqli_real_escape_string($con, $_GET['id']);
 
         // query the database for the selected row
         $query = "SELECT * FROM sell_ticket_history WHERE ticket_id = '$ticket_id'";
-        $result = mysqli_query( $con, $query );
+        $result = mysqli_query($con, $query);
 
-        if ($result && mysqli_num_rows( $result ) > 0) {
-            $row = mysqli_fetch_assoc( $result );
+        if ($result && mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_assoc($result);
             // display ticket details
-        }
-        else {
+        } else {
             // handle error when ticket not found
         }
-    }
-    else {
+    } else {
         // handle error when id is not provided in URL
     }
 
@@ -96,43 +94,70 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                     <table>
                         <!--<caption><p align="left">Chair Coach<br />Golden Line (Ferry)</p></caption>-->
                         <tr>
-                            <td><strong>Date: <?php echo $row['date']; ?></strong></td>
+                            <td><strong>Date:
+                                    <?php echo $row['date']; ?>
+                                </strong></td>
                             <td colspan="3" nowrap></td>
                         </tr>
                         <tr>
-                            <td nowrap><strong>Time: <?php echo $row['time']; ?></strong></td>
+                            <td nowrap><strong>Time:
+                                    <?php echo $row['time']; ?>
+                                </strong></td>
                         </tr>
                         <tr>
-                            <td width="75"><strong>Coach: <?php echo $row['coach_no']; ?></strong></td>
+                            <td width="75"><strong>Coach:
+                                    <?php echo $row['coach_no']; ?>
+                                </strong></td>
                         </tr>
                         <tr>
-                            <td nowrap>PNR: <?php echo $row['ticket_id']; ?></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">Name: <?php echo $row['name']; ?></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">Mobile: <?php echo $row['mobile']; ?></td>
-                        </tr>
-                        <tr>
-                            <td nowrap>FROM: Hemayetpur</td>
-                        </tr>
-                        <tr>
-                            <td nowrap>To: <?php echo $row['station']; ?></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">Ticket Price: <?php echo $row['fare']; ?></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">Total Fare: <?php echo $row['total_fare']; ?></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">Seat No:
-                                <?php echo implode( ", ", preg_split( '/(?<=\d)(?=[a-z])/i', $row['seat'] ) ); ?>
+                            <td nowrap>PNR:
+                                <?php echo $row['ticket_id']; ?>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2">Mafuz(Hemayetpur, Dhaka)</td>
+                            <td colspan="4">Name:
+                                <?php echo $row['name']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Mobile:
+                                <?php echo $row['mobile']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td nowrap>FROM:
+                                <?php echo $row['seller_counter']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td nowrap>To:
+                                <?php echo $row['station']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Ticket Price:
+                                <?php echo $row['fare']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td nowrap>Discount Price:
+                                <?php echo $row['discount']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Total Fare:
+                                <?php echo $row['total_fare']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Seat No:
+                                <?php echo implode(", ", preg_split('/(?<=\d)(?=[a-z])/i', $row['seat'])); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <?php echo $row['seller_name'] . "(" . $row['seller_counter'] . ")"; ?>
+                            </td>
                         </tr>
                     </table>
                 </td>
@@ -142,52 +167,77 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                         <!--<caption><p align="left">Chair Coach<br />Golden Line (Ferry)</p></caption>-->
                         <tr>
                             <td nowrap><strong>Date:</strong></td>
-                            <td class="large mono" nowrap>&nbsp; <?php echo $row['date']; ?></td>
+                            <td class="large mono" nowrap>&nbsp;
+                                <?php echo $row['date']; ?>
+                            </td>
                             <td nowrap="nowrap"><strong>Time:</strong></td>
-                            <td class="large mono"><?php echo $row['time']; ?></td>
+                            <td class="large mono">
+                                <?php echo $row['time']; ?>
+                            </td>
                         </tr>
                         <tr>
                             <td width="65"><strong>Coach:</strong></td>
-                            <td width="30" class="large mono"><?php echo $row['coach_no']; ?></span></td>
+                            <td width="30" class="large mono">
+                                <?php echo $row['coach_no']; ?></span>
+                            </td>
                             <td width="88"><strong>PNR:</strong></td>
-                            <td width="132"><?php echo $row['ticket_id']; ?></td>
+                            <td width="132">
+                                <?php echo $row['ticket_id']; ?>
+                            </td>
                         </tr>
                         <tr>
-                            <td colspan="4">Name: <?php echo $row['name']; ?></td>
+                            <td colspan="4">Name:
+                                <?php echo $row['name']; ?>
+                            </td>
                         </tr>
                         <tr>
-                            <td colspan="4">Mobile: <?php echo $row['mobile']; ?></td>
+                            <td colspan="4">Mobile:
+                                <?php echo $row['mobile']; ?>
+                            </td>
                         </tr>
                         <tr>
                             <td>FROM:</td>
                             <td>Hemayetpur</td>
                             <td>TO:</td>
-                            <td style="font-weight:bold; font-size:12px"><?php echo $row['station']; ?> </td>
-                        </tr>
-                        <tr>
-                            <td>Issue Date:</td>
-                            <td nowrap><?php echo $row['date']; ?></td>
-                            <td>Time:</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">Departure Place: Hemayetpur, Dhaka</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">Seat No:
-                                <?php echo implode( ", ", preg_split( '/(?<=\d)(?=[a-z])/i', $row['seat'] ) ); ?>
+                            <td style="font-weight:bold; font-size:12px">
+                                <?php echo $row['station']; ?>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="4" nowrap>Ticket Price: <?php echo $row['fare']; ?></td>
+                            <td nowrap>Issue Date Time:</td>
+                            <td nowrap>
+                                <?php echo $row['insert_date_time']; ?>
+                            </td>
                         </tr>
                         <tr>
-                            <td colspan="4" nowrap>Total Fare: <?php echo $row['total_fare']; ?></td>
+                            <td colspan="4">Departure Place:
+                                <?php echo $row['seller_counter']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Seat No:
+                                <?php echo implode(", ", preg_split('/(?<=\d)(?=[a-z])/i', $row['seat'])); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" nowrap>Ticket Price:
+                                <?php echo $row['fare']; ?>
+                            </td>
+                            <td colspan="2" nowrap>Discount Price:
+                                <?php echo $row['discount']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" nowrap>Total Fare:
+                                <?php echo $row['total_fare']; ?>
+                            </td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td colspan="2">Mafuz(Hemayetpur, Dhaka)</td>
+                            <td colspan="2">
+                                <?php echo $row['seller_name'] . "(" . $row['seller_counter'] . ")"; ?>
+                            </td>
                         </tr>
                     </table>
                 </td>
@@ -196,43 +246,70 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                     <table>
                         <!--<caption><p align="left">Chair Coach<br />Golden Line (Ferry)</p></caption>-->
                         <tr>
-                            <td><strong>Date: <?php echo $row['date']; ?></strong></td>
+                            <td><strong>Date:
+                                    <?php echo $row['date']; ?>
+                                </strong></td>
                             <td colspan="3" nowrap></td>
                         </tr>
                         <tr>
-                            <td nowrap><strong>Time: <?php echo $row['time']; ?></strong></td>
+                            <td nowrap><strong>Time:
+                                    <?php echo $row['time']; ?>
+                                </strong></td>
                         </tr>
                         <tr>
-                            <td width="75"><strong>Coach: <?php echo $row['coach_no']; ?></strong></td>
+                            <td width="75"><strong>Coach:
+                                    <?php echo $row['coach_no']; ?>
+                                </strong></td>
                         </tr>
                         <tr>
-                            <td nowrap>PNR: <?php echo $row['ticket_id']; ?></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">Name: <?php echo $row['name']; ?></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">Mobile: <?php echo $row['mobile']; ?></td>
-                        </tr>
-                        <tr>
-                            <td nowrap>FROM: Hemayetpur</td>
-                        </tr>
-                        <tr>
-                            <td nowrap>To: <?php echo $row['station']; ?></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">Ticket Price: <?php echo $row['fare']; ?></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">Total Fare: <?php echo $row['total_fare']; ?></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">Seat No:
-                                <?php echo implode( ", ", preg_split( '/(?<=\d)(?=[a-z])/i', $row['seat'] ) ); ?>
+                            <td nowrap>PNR:
+                                <?php echo $row['ticket_id']; ?>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2">Mafuz(Hemayetpur, Dhaka)</td>
+                            <td colspan="4">Name:
+                                <?php echo $row['name']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Mobile:
+                                <?php echo $row['mobile']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td nowrap>FROM:
+                                <?php echo $row['seller_counter']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td nowrap>To:
+                                <?php echo $row['station']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Ticket Price:
+                                <?php echo $row['fare']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Discount Price:
+                                <?php echo $row['discount']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Total Fare:
+                                <?php echo $row['total_fare']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Seat No:
+                                <?php echo implode(", ", preg_split('/(?<=\d)(?=[a-z])/i', $row['seat'])); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <?php echo $row['seller_name'] . "(" . $row['seller_counter'] . ")"; ?>
+                            </td>
                         </tr>
                     </table>
                 </td>

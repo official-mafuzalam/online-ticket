@@ -262,6 +262,21 @@ if (mysqli_num_rows( $result ) > 0) {
                             </div>
                             <div class="col-md">
                                 <div class="form-floating">
+                                    <input id="discount-fare" class="form-control" type="number" value="0" name="discount_fare" required >
+                                    <label for="mobile">Discount Per Seat</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-2 seat">
+                            <div class="col-md">
+                                <select class="form-select" id="gender" name="gender" required>
+                                    <option selected disabled>Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
                                     <input id="total-fare" class="form-control" type="number" name="total_fare" readonly >
                                     <label for="mobile">Total Fare</label>
                                 </div>
@@ -284,15 +299,7 @@ if (mysqli_num_rows( $result ) > 0) {
                                 </div>
                             </div>
                         </div>
-                        <div class="row g-2 seat">
-                            <div class="col-md">
-                                <select class="form-select" id="gender" name="gender" required>
-                                    <option selected disabled>Select Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-                        </div>
+                        
                         
                         <input type="submit" class="btn btn-info" value="Confirm">
                     </form>
@@ -400,7 +407,9 @@ mysqli_close( $con );
 
         var fareInput = document.getElementById("fare-input").value;
 
-        var totalFare = numChecked * fareInput;
+        var discountInput = document.getElementById("discount-fare").value;
+
+        var totalFare = numChecked * (fareInput - discountInput);
 
         var totalFareInput = document.getElementById("total-fare");
         totalFareInput.value = totalFare;

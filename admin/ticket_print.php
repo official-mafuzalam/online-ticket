@@ -140,6 +140,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                             </td>
                         </tr>
                         <tr>
+                            <td nowrap>Discount Price:
+                                <?php echo $row['discount']; ?>
+                            </td>
+                        </tr>
+                        <tr>
                             <td colspan="4">Total Fare:
                                 <?php echo $row['total_fare']; ?>
                             </td>
@@ -215,8 +220,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="4" nowrap>Ticket Price:
+                            <td colspan="2" nowrap>Ticket Price:
                                 <?php echo $row['fare']; ?>
+                            </td>
+                            <td colspan="2" nowrap>Discount Price:
+                                <?php echo $row['discount']; ?>
                             </td>
                         </tr>
                         <tr>
@@ -281,6 +289,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                         <tr>
                             <td colspan="4">Ticket Price:
                                 <?php echo $row['fare']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Discount Price:
+                                <?php echo $row['discount']; ?>
                             </td>
                         </tr>
                         <tr>

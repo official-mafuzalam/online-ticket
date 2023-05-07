@@ -47,7 +47,7 @@ require_once '../inc/conn.php';
                 echo "<td>" . $row["user_name"] . "</td>";
                 echo "<td>" . $row["mobile"] . "</td>";
                 echo "<td>" . $row["password"] . "</td>";
-                echo '<td><a type="button" class="btn btn-primary" target="_blank" href="ticket_print.php?id=' . $row["id"] . '">Edit</a></td>';
+                echo '<td><a type="button" class="btn btn-primary" href="user_edit.php?id=' . $row["id"] . '">Edit</a></td>';
                 echo "</tr>";
             }
             echo "</table>";

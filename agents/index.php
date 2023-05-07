@@ -87,7 +87,7 @@ $user_name = $_SESSION['user_name'];
                                 <i class="bi bi-ticket-detailed"></i>
                                 Search Ticket
                             </a>
-                            <a class="dropdown-item" href="search_tickets.php">
+                            <a class="dropdown-item" href="sells_report.php">
                                 <i class="bi bi-card-list"></i>
                                 User Sell Report
                             </a>
