@@ -47,58 +47,82 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>Trip Sheet</title>
+    <style>
+        #table {
+            font-size: 13px;
+        }
+
+        @media print {
+            #no-print {
+                display: none;
+            }
+
+            #print-btn {
+                display: none;
+            }
+
+            .container {
+                max-width: none;
+                width: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="container">
-        <div class="bg-danger" style="width: 100%;">
-            <div class="d-flex justify-content-between text-white px-3 py-2">
-                <p class="font-weight-bold" style="font-size: 20px;">Friends Travels Ltd</p>
+        <div>
+            <div class="d-flex justify-content-between px-3 py-2">
+                <div>
+                </div>
                 <p class="font-weight-bold" style="font-size: 20px;"></p>
                 <div>
-                    <p class="font-weight-bold" style="font-size: 14px;">
-                        <?php echo $counter_name . " | " . $user_name ?>
-                    </p>
+                    <button id="print-btn" class="btn btn-primary btn-sm">Print</button>
+                </div>
+            </div>
+            <div class="d-flex border justify-content-between text-black px-3">
+                <div>
+                    <p class="font-weight-bold" style="font-size: 20px;">Friends Travels Ltd</p>
+                    <p>Coach Id: <span>
+                            <?php echo $row['id']; ?>
+                        </p>
+                    <p>Route: <span>
+                            <?php echo $row['route']; ?>
+                        </p>
+                    <p>Date: <span>
+                            <?php echo $row['date']; ?>
+                        </p>
+                </div>
+                <div>
+                    <p>Counter:
+                            <?php echo $counter_name . " (" . $user_name . ")" ?>
+                        </p>
+                    <p>Supervisor:MR. X</p>
+                    <p>Driver:Mr. Y</p>
+                    <p>Reg.No:
+                            <?php echo $row['time']; ?>
+                        </p>
+                </div>
+                <div>
+                    <p>Coach:
+                            <?php echo $row['coach_no']; ?>
+                        </p>
+                    <p>Challan Serial:
+                            <?php echo rand(1000, 9999); ?>
+                        </p>
+                    <p>Bus Type:NON_AC</p>
                     <p class="font-weight-bold" style="font-size: 14px; margin-top: 5px;">
-                        <?php echo date("Y-m-d H:i:s"); ?>
+                        Print Time: <?php echo date("Y-m-d H:i:s"); ?>
                     </p>
                 </div>
             </div>
         </div>
         <div>
-            <div class="d-flex border justify-content-between text-black px-3">
-                <div>
-                    <p>Coach Id: <span class="fw-bold">
-                            <?php echo $row['id']; ?>
-                        </span></p>
-                    <p>Route: <span class="fw-bold">
-                            <?php echo $row['route']; ?>
-                        </span></p>
-                    <p>Date: <span class="fw-bold">
-                            <?php echo $row['date']; ?>
-                        </span></p>
-                </div>
-                <div>
-                    <p>Supervisor: <span class="fw-bold">MR. X</span></p>
-                    <p>Driver: <span class="fw-bold">Mr. Y</span></p>
-                    <p>Reg.No: <span class="fw-bold">
-                            <?php echo $row['time']; ?>
-                        </span></p>
-                </div>
-                <div>
-                    <p>Coach: <span class="fw-bold">
-                            <?php echo $row['coach_no']; ?>
-                        </span></p>
-                    <p>Challan Serial: <span class="fw-bold">
-                            <?php echo rand(1000, 9999); ?>
-                        </span></p>
-                    <p>Bus Type: <span class="fw-bold">NON_AC</span></p>
-                </div>
-            </div>
+
 
             <br>
-            <table id="table" class="table table-striped-columns border text-center">
+            <table id="table" class="table table-striped-columns border table-sm">
                 <thead>
                     <tr>
                         <th scope="col">Seat</th>
@@ -108,8 +132,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                         <th scope="col">Mobile</th>
                         <th scope="col">Gender</th>
                         <th scope="col">Station</th>
-                        <th scope="col">Discount</th>
                         <th scope="col">Fare</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Total Fare</th>
                     </tr>
                 </thead>
                 <tbody id="my-table-body">
@@ -136,7 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                     foreach ($columns as $column) {
                         $seats = explode(",", $column); // split the seat string into an array
                         foreach ($seats as $seat) {
-                            $ticketQuery = "SELECT ticket_id, name, mobile, gender, station, seat, fare, discount, discount_fare_per_seat, seller_name, seller_counter FROM sell_ticket_history WHERE coach_id = ? AND seat LIKE ? AND seller_id = '$user_id'";
+                            $ticketQuery = "SELECT ticket_id, name, mobile, gender, station, seat, fare, discount, discount_fare_per_seat, total_fare, seller_name, seller_counter FROM sell_ticket_history WHERE coach_id = ? AND seat LIKE ? AND seller_id = '$user_id'";
                             $ticketStmt = $con->prepare($ticketQuery);
                             $seatParam = '%' . $seat . '%'; // create variable to hold third argument
                             $ticketStmt->bind_param("is", $coach_id, $seatParam); // pass variable by reference
@@ -155,6 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                                     echo "<td class='font-weight-normal'>" . $ticketRow['mobile'] . "</td>";
                                     echo "<td class='font-weight-normal'>" . $ticketRow['gender'] . "</td>";
                                     echo "<td class='font-weight-normal'>" . $ticketRow['station'] . "</td>";
+                                    echo "<td class='font-weight-normal'>" . $ticketRow['fare'] . "</td>";
                                     echo "<td class='font-weight-normal'>" . $ticketRow['discount'] . "</td>";
                                     echo "<td class='font-weight-normal'>" . $ticketRow['discount_fare_per_seat'] . "</td>";
                                     echo "</tr>";
@@ -173,12 +199,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             <div class="d-flex border justify-content-between text-black px-3">
                 <div>
                     <p>Total Sold Seat:
-                        <span id="sold-seat" class="fw-bold"></span>
+                        <span id="sold-seat" class="fw-bold"> </span>
+                    </p>
+                </div>
+                <div>
+                    <p>Total Discount:
+                        <span id="discount-value" class="fw-bold"> </span>
                     </p>
                 </div>
                 <div>
                     <p>Total Sell Amount:
-                        <span id="value" class="fw-bold"></span>
+                        <span id="value" class="fw-bold"> </span>
                     </p>
                 </div>
             </div>
@@ -188,22 +219,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
             <div class="container mt-4">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-sm-3">
                         <div class="border-top border-1 border-dark w-50"></div>
                         <p class="mt-3 text-dark">Signature</p>
                         <p class="mt-3 text-dark">(Counter Master)</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-3">
                         <div class="border-top border-1 border-dark w-50"></div>
                         <p class="mt-3 text-dark">Signature</p>
                         <p class="mt-3 text-dark">(Guide)</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-3">
                         <div class="border-top border-1 border-dark w-50"></div>
                         <p class="mt-3 text-dark">Signature</p>
                         <p class="mt-3 text-dark">(Checker 1)</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-3">
                         <div class="border-top border-1 border-dark w-50"></div>
                         <p class="mt-3 text-dark">Signature</p>
                         <p class="mt-3 text-dark">(Checker 2)</p>
@@ -228,12 +259,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <script>
 
         // Total Sold Seat Value
-        var table = document.getElementById("table"), sumVal = 0;
+        var table = document.getElementById("table"), sumVal = 0, discountValue = 0;
 
         for (var i = 1; i < table.rows.length; i++) {
-            sumVal = sumVal + parseInt(table.rows[i].cells[8].innerHTML);
+            sumVal = sumVal + parseInt(table.rows[i].cells[9].innerHTML);
         }
         document.getElementById("value").innerText = sumVal + ' TK';
+        // Total Discount Amount
+        for (var i = 1; i < table.rows.length; i++) {
+            discountValue = discountValue + parseInt(table.rows[i].cells[8].innerHTML);
+        }
+        document.getElementById("discount-value").innerText = discountValue + ' TK';
 
         // Total Sold Seat Count
 
@@ -241,6 +277,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         const rowCount = tableBody.rows.length;
         document.getElementById("sold-seat").innerText = rowCount;
 
+
+        // For Print
+
+        document.getElementById("print-btn").addEventListener("click", function () {
+            window.print();
+        });
 
     </script>
 
