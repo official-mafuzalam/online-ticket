@@ -79,9 +79,9 @@ $user_name = $_SESSION['user_name'];
             </div>
         </div>
     </nav>
-    <div class="text-center">
-        <form class="row gx-2" action="" method="post">
-            <div class="col-sm-6 col-md-3">
+    <div class="bg-success-subtle text-center">
+        <form class="row gx-2 d-flex justify-content-center" action="" method="post">
+            <div class="col-sm-6 col-md-2">
                 <div class="p-1">
                     <select class="form-select mr-4" aria-label="Default select example">
                         <option selected>From</option>
@@ -93,7 +93,7 @@ $user_name = $_SESSION['user_name'];
                     </select>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-2">
                 <div class="p-1">
                     <select class="form-select mr-4" aria-label="Default select example">
                         <option selected>To</option>
@@ -105,12 +105,12 @@ $user_name = $_SESSION['user_name'];
                     </select>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-2">
                 <div class="p-1">
                     <input name="date" type="date" class="form-control" value="<?php echo date('Y-m-d'); ?>" required />
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-1">
                 <div class="p-1">
                     <button type="submit" class="btn btn-info">Search</button>
                 </div>
