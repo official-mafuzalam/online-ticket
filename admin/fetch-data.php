@@ -57,174 +57,174 @@ if (mysqli_num_rows( $result ) > 0) {
         </div>
         <div class="container text-center">
             <div class="row">
-                <div class="col">
+                <div class="col-sm-6 col-md-6">
                     <div class="form-check form-check-inline">
                         <div class="row seat">
-                        <div class="col gap">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'A1" autocomplete="on" ' . ( $row['a1'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'A1">A1</label>
-                    
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'A2" autocomplete="on" ' . ( $row['a2'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'A2">A2</label>
+                            <div class="col gap">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'A1" autocomplete="on" ' . ( $row['a1'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'A1">A1</label>
+                        
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'A2" autocomplete="on" ' . ( $row['a2'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'A2">A2</label>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'A3" autocomplete="on" ' . ( $row['a3'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'A3">A3</label>
+                        
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'A4" autocomplete="on" ' . ( $row['a4'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'A4">A4</label>
+                            </div>
                         </div>
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'A3" autocomplete="on" ' . ( $row['a3'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'A3">A3</label>
-                    
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'A4" autocomplete="on" ' . ( $row['a4'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'A4">A4</label>
-                        </div>
-                    </div>
-                    <div class="row seat">
-                        <div class="col gap">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'B1" autocomplete="on" ' . ( $row['b1'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'B1">B1</label>
+                        <div class="row seat">
+                            <div class="col gap">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'B1" autocomplete="on" ' . ( $row['b1'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'B1">B1</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'B2" autocomplete="on" ' . ( $row['b2'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'B2">B2</label>
-                        </div>
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'B3" autocomplete="on" ' . ( $row['b3'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'B3">B3</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'B2" autocomplete="on" ' . ( $row['b2'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'B2">B2</label>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'B3" autocomplete="on" ' . ( $row['b3'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'B3">B3</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'B4" autocomplete="on" ' . ( $row['b4'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'B4">B4</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'B4" autocomplete="on" ' . ( $row['b4'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'B4">B4</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row seat">
-                        <div class="col gap">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'C1" autocomplete="on" ' . ( $row['c1'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'C1">C1</label>
+                        <div class="row seat">
+                            <div class="col gap">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'C1" autocomplete="on" ' . ( $row['c1'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'C1">C1</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'C2" autocomplete="on" ' . ( $row['c2'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'C2">C2</label>
-                        </div>
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'C3" autocomplete="on" ' . ( $row['c3'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'C3">C3</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'C2" autocomplete="on" ' . ( $row['c2'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'C2">C2</label>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'C3" autocomplete="on" ' . ( $row['c3'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'C3">C3</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'C4" autocomplete="on" ' . ( $row['c4'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'C4">C4</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'C4" autocomplete="on" ' . ( $row['c4'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'C4">C4</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row seat">
-                        <div class="col gap">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'D1" autocomplete="on" ' . ( $row['d1'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'D1">D1</label>
+                        <div class="row seat">
+                            <div class="col gap">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'D1" autocomplete="on" ' . ( $row['d1'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'D1">D1</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'D2" autocomplete="on" ' . ( $row['d2'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'D2">D2</label>
-                        </div>
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'D3" autocomplete="on" ' . ( $row['d3'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'D3">D3</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'D2" autocomplete="on" ' . ( $row['d2'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'D2">D2</label>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'D3" autocomplete="on" ' . ( $row['d3'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'D3">D3</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'D4" autocomplete="on" ' . ( $row['d4'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'D4">D4</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'D4" autocomplete="on" ' . ( $row['d4'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'D4">D4</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row seat">
-                        <div class="col gap">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'E1" autocomplete="on" ' . ( $row['e1'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'E1">E1</label>
+                        <div class="row seat">
+                            <div class="col gap">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'E1" autocomplete="on" ' . ( $row['e1'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'E1">E1</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'E2" autocomplete="on" ' . ( $row['e2'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'E2">E2</label>
-                        </div>
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'E3" autocomplete="on" ' . ( $row['e3'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'E3">E3</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'E2" autocomplete="on" ' . ( $row['e2'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'E2">E2</label>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'E3" autocomplete="on" ' . ( $row['e3'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'E3">E3</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'E4" autocomplete="on" ' . ( $row['e4'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'E4">E4</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'E4" autocomplete="on" ' . ( $row['e4'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'E4">E4</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row seat">
-                        <div class="col gap">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'F1" autocomplete="on" ' . ( $row['f1'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'F1">F1</label>
+                        <div class="row seat">
+                            <div class="col gap">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'F1" autocomplete="on" ' . ( $row['f1'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'F1">F1</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'F2" autocomplete="on" ' . ( $row['f2'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'F2">F2</label>
-                        </div>
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'F3" autocomplete="on" ' . ( $row['f3'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'F3">F3</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'F2" autocomplete="on" ' . ( $row['f2'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'F2">F2</label>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'F3" autocomplete="on" ' . ( $row['f3'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'F3">F3</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'F4" autocomplete="on" ' . ( $row['f4'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'F4">F4</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'F4" autocomplete="on" ' . ( $row['f4'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'F4">F4</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row seat">
-                        <div class="col gap">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'G1" autocomplete="on" ' . ( $row['g1'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'G1">G1</label>
+                        <div class="row seat">
+                            <div class="col gap">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'G1" autocomplete="on" ' . ( $row['g1'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'G1">G1</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'G2" autocomplete="on" ' . ( $row['g2'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'G2">G2</label>
-                        </div>
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'G3" autocomplete="on" ' . ( $row['g3'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'G3">G3</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'G2" autocomplete="on" ' . ( $row['g2'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'G2">G2</label>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'G3" autocomplete="on" ' . ( $row['g3'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'G3">G3</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'G4" autocomplete="on" ' . ( $row['g4'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'G4">G4</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'G4" autocomplete="on" ' . ( $row['g4'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'G4">G4</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row seat">
-                        <div class="col gap">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'H1" autocomplete="on" ' . ( $row['h1'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'H1">H1</label>
+                        <div class="row seat">
+                            <div class="col gap">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'H1" autocomplete="on" ' . ( $row['h1'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'H1">H1</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'H2" autocomplete="on" ' . ( $row['h2'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'H2">H2</label>
-                        </div>
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'H3" autocomplete="on" ' . ( $row['h3'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'H3">H3</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'H2" autocomplete="on" ' . ( $row['h2'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'H2">H2</label>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'H3" autocomplete="on" ' . ( $row['h3'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'H3">H3</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'H4" autocomplete="on" ' . ( $row['h4'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'H4">H4</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'H4" autocomplete="on" ' . ( $row['h4'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'H4">H4</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row seat">
-                        <div class="col gap">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'I1" autocomplete="on" ' . ( $row['i1'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'I1">I1</label>
+                        <div class="row seat">
+                            <div class="col gap">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'I1" autocomplete="on" ' . ( $row['i1'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'I1">I1</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'I2" autocomplete="on" ' . ( $row['i2'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'I2">I2</label>
-                        </div>
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'I3" autocomplete="on" ' . ( $row['i3'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'I3">I3</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'I2" autocomplete="on" ' . ( $row['i2'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'I2">I2</label>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'I3" autocomplete="on" ' . ( $row['i3'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'I3">I3</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'I4" autocomplete="on" ' . ( $row['i4'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'I4">I4</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'I4" autocomplete="on" ' . ( $row['i4'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'I4">I4</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row seat">
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'J1" autocomplete="on" ' . ( $row['j1'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'J1">J1</label>
+                        <div class="row seat">
+                            <div class="col">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'J1" autocomplete="on" ' . ( $row['j1'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'J1">J1</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'J2" autocomplete="on" ' . ( $row['j2'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'J2">J2</label>
-                        </div>
-                        <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'J5" autocomplete="on" ' . ( $row['j5'] == 1 ? 'checked disabled' : '' ) . '>
-                        <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'J5">J5</label>
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'J3" autocomplete="on" ' . ( $row['j3'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'J3">J3</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'J2" autocomplete="on" ' . ( $row['j2'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'J2">J2</label>
+                            </div>
+                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'J5" autocomplete="on" ' . ( $row['j5'] == 1 ? 'checked disabled' : '' ) . '>
+                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'J5">J5</label>
+                            <div class="col">
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'J3" autocomplete="on" ' . ( $row['j3'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'J3">J3</label>
 
-                            <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'J4" autocomplete="on" ' . ( $row['j4'] == 1 ? 'checked disabled' : '' ) . '>
-                            <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'J4">J4</label>
+                                <input type="checkbox" class="btn-check" id="' . $row['coach_no'] . 'J4" autocomplete="on" ' . ( $row['j4'] == 1 ? 'checked disabled' : '' ) . '>
+                                <label class="btn btn-outline-primary" for="' . $row['coach_no'] . 'J4">J4</label>
+                            </div>
                         </div>
-                    </div>
                         
                     </div>
                 </div>
-                <div class="col seat">
+                <div class="col-sm-6 col-md-6 seat">
                     <form action="sell_ticket.php" method="post">
                         <div class="row g-2 seat">
                             <div class="col-md">
